@@ -1,0 +1,28 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#map{
+    height: 300px;
+}
+
+.input-group{
+    margin-bottom: 1em;
+}
+
+#btnSubmit{
+    margin-right: 1em;
+}
+
+label.input-group-addon{
+    width: 200px;
+}
+
+#formAddPlace .input-group{
+    width: 100%;
+}

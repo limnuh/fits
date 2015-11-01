@@ -1,0 +1,31 @@
+extends ../layout
+
+block content
+    .panel.panel-default
+        .panel-heading #{title}
+        .panel-body
+             form#formAddPlace(name="addplace",method="post",action="/places")
+                 .input-group
+                    label(for="inputName").input-group-addon Name: 
+                    input#inputName(type="text", name="name", required='').form-control
+                 .input-group
+                    label(for="inputAddress").input-group-addon Address:
+                    input#inputAddress(type='text', name='address').form-control
+                 .input-group
+                    label(for="inputGroup").input-group-addon Group:
+                    input#inputGroup(type='text', name='group').form-control
+                 .input-group
+                    label(for="inputOpen").input-group-addon Open:
+                    input#inputOpen(type='text', name='open').form-control
+                 .input-group
+                    label(for="inputFindme").input-group-addon Findme:
+                    input#inputFindme(type='text', name='findme').form-control
+                 .input-group
+                    label(for="inputLat").input-group-addon Lat: 
+                    input#inputLat(type="text", name="lat").form-control
+                 .input-group
+                    label(for="inputLng").input-group-addon Lng: 
+                    input#inputLng(type="text", name="lng").form-control
+                 .input-group
+                    button#btnSubmit(type="submit").btn.btn-success Save
+                    a(href='/places').btn.btn-danger Back

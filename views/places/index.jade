@@ -1,0 +1,32 @@
+extends ../layout
+
+block content
+    .panel.panel-default
+        .panel-heading #{title}
+        table.table
+            thead
+                tr
+                    td Place ID
+                    td Name
+                    td Address
+                    td Group
+                    td Open
+            tbody
+                - each place, i in places
+                    tr
+                        td= place.place_id
+                        td= place.name
+                        td= place.address
+                        td= place.group
+                        td= place.open
+                        td
+                            form(action='/places/#{place._id}/edit',method='post',enctype='application/x-www-form-urlencoded')
+                                input(type='hidden',value='DELETE',name='_method')
+                                button(type='submit').btn.btn-danger.
+                                    Delete
+                        td
+                            a(href='/places/#{place._id}/edit').btn.btn-success Edit
+                        td
+                            a(href='/places/#{place._id}').btn.btn-default Show
+        .panel-footer
+            a(href='/places/new') Create Place 

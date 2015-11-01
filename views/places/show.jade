@@ -1,0 +1,29 @@
+
+extends ../layout
+
+block content
+    .panel.panel-default
+        .panel-heading Place: #{place.name}
+        .panel-body.row
+            .col-md-6
+                p
+                    | Name: 
+                    span#name #{place.name}
+                p Address: #{place.address}
+                p Group: #{place.group}
+                p Open: #{place.open}
+                p Findme: #{place.findme}
+                p
+                    | Lat: 
+                    span#lat #{place.lat}
+                p
+                    | Lng: 
+                    span#lng #{place.lng}
+            .col-md-6
+                .well
+                    #map
+                    script(src='/javascripts/map.js')
+                    script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCVlN_PJimfdK3X5tM2QtyFBELB8hjyX78&callback=initMap', async='', defer='')
+        .panel-footer
+            p 
+                a(href='/places').btn.btn-default Back 
