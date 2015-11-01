@@ -4,7 +4,7 @@ block content
     .panel.panel-default
         .panel-heading Edit: #{place.name}
         .panel-body
-             form#formAddPlace(name="addplace",method="post",action="/places")
+             form#formAddPlace(action='/places/#{place._id}/edit',method='post',name='updateplace',enctype='application/x-www-form-urlencoded')
                  .input-group
                     label(for="inputName").input-group-addon Name: 
                     input#inputName(type="text", value='#{place.name}', name="name", required='').form-control
@@ -28,4 +28,5 @@ block content
                     input#inputLng(type="text", value='#{place.lng}', name="lng").form-control
                  .input-group
                     button#btnSubmit(type="submit").btn.btn-success Save
+                    input(type='hidden',value='PUT',name='_method')
                     a(href='/places').btn.btn-danger Back
